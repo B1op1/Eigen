@@ -697,7 +697,7 @@ canvas#test {
 
 .title {
   font-weight: 500;
-  font-size: 3em;
+  font-size: 2.5em;
   color: #ffffff;
   letter-spacing: 5px;
   cursor: pointer;
@@ -788,6 +788,18 @@ canvas#test {
 
 .contact-text {
   margin: 0;
+}
+
+.contact-text:hover {
+  margin: 0;
+  color: white;
+  font-size: 1.2em;
+}
+
+@media screen and (max-width: 850px) {
+  .contact-text {
+    display: none;
+  }
 }
 
 footer {
