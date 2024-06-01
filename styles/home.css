@@ -800,6 +800,15 @@ canvas#test {
   .contact-text {
     display: none;
   }
+  .copyright-text {
+  }
+  .copyright-symbol {
+    margin-left: -20px;
+  }
+
+  .about-container {
+    margin: 6vh 10vw;
+  }
 }
 
 footer {
