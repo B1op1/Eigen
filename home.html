@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDevelpersBe</title>
+    <link rel="stylesheet" href="styles/home.css">
+    </head>
+  <body>
+    <div class="nav-container">
+      <div class="links-nav">
+        <a class="home-link" href="#Home">Home</a>
+        <a class="about-link" href="#About">About</a>
+        <a class="portfolio-link" href="#Portfolio">Portfolio</a>
+        <a class="contact-link" href="#contact">Contact</a>
+  </div>
+</div>
+      </div>
+    </div>
+    <div id="Home">
+    <div class="title-container">
+      <div class="line-row">
+        <div class="line line1-1"></div>
+        <div class="line line1-2"></div>
+        <div class="line line1-3"></div>
+        <div class="line line1-4"></div>
+      </div>
+
+      <div class="line-row">
+        <div class="line line2-1"></div>
+        <div class="line line2-2"></div>
+        <div class="line line2-3"></div>
+      </div>
+
+      <div class="line-row">
+        <div class="line line3-1"></div>
+        <div class="line line3-2"></div>
+        <div class="line line3-3"></div>
+        <div class="line line3-4"></div>
+      </div>
+
+      <div class="line-row">
+        <div class="line line4-1"></div>
+        <div class="line line4-2"></div>
+        <div class="line line4-3"></div>
+        <div class="line line4-4"></div>
+        <div class="line line4-5"></div>
+      </div>
+
+      <div class="line-row">
+        <div class="line line5-1"></div>
+        <div class="line line5-2"></div>
+        <div class="line line5-3"></div>
+        <div class="line line5-4"></div>
+      </div>
+
+      <h1 class="title"><span>Web</span>Developers<span>Be</span></h1>
+      <h2 class="description-h2">Frontend Developers Team</h2>
+
+      <div class="line-row">
+        <div class="line line6-1"></div>
+        <div class="line line6-2"></div>
+        <div class="line line6-3"></div>
+        <div class="line line6-4"></div>
+      </div>
+
+      <div class="line-row">
+        <div class="line line7-1"></div>
+        <div class="line line7-2"></div>
+        <div class="line line7-3"></div>
+        <div class="line line7-4"></div>
+        <div class="line line7-5"></div>
+      </div>
+
+      <div class="line-row">
+        <div class="line line8-1"></div>
+        <div class="line line8-2"></div>
+        <div class="line line8-3"></div>
+        <div class="line line8-4"></div>
+      </div>
+
+      <div class="line-row">
+        <div class="line line9-1"></div>
+        <div class="line line9-2"></div>
+      </div>
+
+      <div class="line-row">
+        <div class="line line10-1"></div>
+        <div class="line line10-2"></div>
+        <div class="line line10-3"></div>
+        <div class="line line10-4"></div>
+      </div>
+
+      <div class="line-row">
+        <div class="line line11-1"></div>
+        <div class="line line11-2"></div>
+        <div class="line line11-3"></div>
+      </div>
+    </div>
+    <div class="lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+    <canvas id="test"></canvas>
+    <script src="background.js"></script>
+    </div>
+    <div id="About">
+    <div class="about-container">
+      <h2 class="about-title"><span>Web</span>Developers<span>Be</span></h2>
+      <p class="description-about">Frontend developers.</p>
+      <p class="description-about"> Beste statische/geanimeerde websites voor lage prijzen!</p>
+      <img class="logos-abt" src="/assets/logos-abt.png">
+    </div>
+  </div>
+  <div id="Portfolio">
+    <div class="portfolio-container">
+        <div class="portfolio-title"><h4>Portfolio binnenkort online!</h4></div>
+    </div>
+</div>
+<div id="contact">
+  <footer>
+    <div class="contact-container">
+      <div class="contact-grid">
+          <a href="https://www.facebook.com/profile.php?id=61560316055868" target="_blank" class="facebook-icon">
+              <img src="/assets/facebook-icon.png" alt="First Icon">
+          </a>
+          <a href="mailto:webdevelopersbe@gmail.com" class="e-mail-icon">
+              <img src="/assets/e-mail-icon.png" alt="Second Icon">
+          </a>
+          <p class="contact-text"><a class="contact-text" href="mailto:webhostersbe@gmail.com">webdevelopersbe@gmail.com</a></p>
+          <img class="copyright-symbol" src="/assets/copyright-symbol.png">
+          <p class="copyright-text"> 2024 WebDevelopersBe. All rights reserved.</p>
+      </div>
+  </div>
+</footer>
+</div>
+<script>
+  // Variable to track animation progress
+  let animationInProgress = false;
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      // Prevent default behavior if animation is in progress
+      if (animationInProgress) {
+        e.preventDefault();
+        return;
+      }
+
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      const targetId = target.getAttribute('id');
+
+      // Set animation in progress
+      animationInProgress = true;
+
+      // Scroll to target smoothly
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+
+      // Wait for the scrolling to finish
+      setTimeout(() => {
+        // Add glowing effect to text elements within target section
+        target.querySelectorAll('h1, h2, h3, h4, h5, h6, p').forEach(element => {
+          element.classList.add('glow');
+        });
+
+        // Remove glowing effect after 1 second
+        setTimeout(() => {
+          target.querySelectorAll('h1, h2, h3, h4, h5, h6, p').forEach(element => {
+            element.classList.remove('glow');
+          });
+
+          // Set animation complete
+          animationInProgress = false;
+        }, 1000);
+      }, 500); // Wait 0.5 seconds after scrolling starts
+    });
+  });
+
+  // Listen for scroll events to reset animationInProgress if the user scrolls manually
+  window.addEventListener('scroll', () => {
+    if (animationInProgress) {
+      animationInProgress = false;
+    }
+  });
+</script>
+</body>
+</html>
